@@ -1,0 +1,26 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        // Specify the file path
+        string folderPath = @"C:\YourFolderPath";
+        string fileName = "example.txt";
+        string filePath = Path.Combine(folderPath, fileName);
+
+        try
+        {
+            // Read all text from the file
+            string fileContent = File.ReadAllText(filePath);
+
+            Console.WriteLine("Contents of the file:");
+            Console.WriteLine(fileContent);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+}
