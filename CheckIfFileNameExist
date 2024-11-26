@@ -1,0 +1,22 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string folderPath = @"C:\YourFolderPath";
+        string fileName = "example.txt";
+        string filePath = Path.Combine(folderPath, fileName);
+
+        // Check if the file exists
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine($"The file '{fileName}' exists in the folder.");
+        }
+        else
+        {
+            Console.WriteLine($"The file '{fileName}' does not exist in the folder.");
+        }
+    }
+}
