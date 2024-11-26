@@ -1,0 +1,28 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string parentFolder = @"C:\YourParentFolderPath";
+
+        try
+        {
+            // Get all subfolder names
+            string[] subfolders = Directory.GetDirectories(parentFolder);
+
+            Console.WriteLine("Subfolders inside " + parentFolder + ":");
+            foreach (string subfolder in subfolders)
+            {
+                // Extract folder name
+                string folderName = Path.GetFileName(subfolder);
+                Console.WriteLine(folderName);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+}
