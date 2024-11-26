@@ -1,0 +1,11 @@
+try
+{
+    foreach (string line in File.ReadLines(filePath))
+    {
+        Console.WriteLine(line);
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("An error occurred: " + ex.Message);
+}
